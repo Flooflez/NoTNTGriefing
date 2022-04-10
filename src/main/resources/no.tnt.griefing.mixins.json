@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.no.tnt.griefing.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BedBlockMixin",
+    "EndCrystalEntityMixin",
+    "RespawnAnchorBlockMixin",
+    "TntEntityMixin",
+    "TntMinecartEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
