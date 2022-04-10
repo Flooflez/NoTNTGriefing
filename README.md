@@ -1,5 +1,5 @@
 # No TNT Griefing
-
+![NoTNTGriefingBanner](https://github.com/Flooflez/NoTNTGriefing/blob/1.18/src/main/resources/assets/no.tnt.griefing/NoTNTGriefingBanner.png?raw=true)
 ## What is NTG?
 
 This simple fabric mod for Minecraft 1.18.2 implements new gamerules that allow you to customise which explosions will break blocks. This allows server owners to customise what kind of explosions are allowed on a server
