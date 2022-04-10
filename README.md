@@ -9,7 +9,7 @@ This simple fabric mod for Minecraft 1.18.2 implements new gamerules that allow 
 |-------------------------|-------------------------------------------------------------------|
 | doTntGriefing           | Allow TNT and TNT Minecarts to break blocks                       |
 | doBedGriefing           | Allow Beds in The Nether and The End to break blocks              |
-| doRespawnAnchorGriefing | Allow RespawnAnchors in The Overworld and The End to break blocks |
+| doRespawnAnchorGriefing | Allow Respawn Anchors in The Overworld and The End to break blocks |
 | doEndCrystalGriefing    | Allow End Crystals to break blocks                                |
 
 ## Installation Instructions (Single Player Worlds)
