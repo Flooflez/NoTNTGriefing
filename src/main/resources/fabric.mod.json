@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "notntgriefing",
+  "version": "1.0.0",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "No TNT Griefing",
+  "description": "New Anti-Griefing Gamerules for Your Worlds",
   "authors": [
-    "Me!"
+    "Flooflez"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Flooflez/NoTNTGriefing"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/no.tnt.griefing/icon.png",
 
   "environment": "*",
@@ -33,6 +32,5 @@
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
   }
 }
