@@ -5,7 +5,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import net.no.tnt.griefing.NoTNTGriefing;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,12 +17,12 @@ public abstract class TntEntityMixin extends Entity {
 		super(type, world);
 	}
 
-	@ModifyArg(method = "explode", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/world/explosion/Explosion$DestructionType;)Lnet/minecraft/world/explosion/Explosion;"), index = 5)
-	private Explosion.DestructionType modifyDestructionType(Explosion.DestructionType destructionType) {
+	@ModifyArg(method = "explode", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"), index = 5)
+	private World.ExplosionSourceType modifyExplosionSourceType(World.ExplosionSourceType destructionType) {
 		GameRules gameRules = this.world.getGameRules();
 		if (!gameRules.getBoolean(NoTNTGriefing.TNT_GRIEFING)) {
-			return Explosion.DestructionType.NONE;
+			return World.ExplosionSourceType.NONE;
 		}
-		return Explosion.DestructionType.BREAK;
+		return World.ExplosionSourceType.TNT;
 	}
 }

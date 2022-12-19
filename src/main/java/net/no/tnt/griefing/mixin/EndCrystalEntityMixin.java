@@ -3,11 +3,8 @@ package net.no.tnt.griefing.mixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.decoration.EndCrystalEntity;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.Packet;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import net.no.tnt.griefing.NoTNTGriefing;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,13 +17,13 @@ public abstract class EndCrystalEntityMixin extends Entity{
     }
 
 
-    @ModifyArg(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/world/explosion/Explosion$DestructionType;)Lnet/minecraft/world/explosion/Explosion;"), index = 5)
-    private Explosion.DestructionType modifyDestructionType(Explosion.DestructionType destructionType) {
+    @ModifyArg(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/world/explosion/ExplosionBehavior;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"), index = 8)
+    private World.ExplosionSourceType modifyExplosionSourceType(World.ExplosionSourceType destructionType) {
         GameRules gameRules = this.world.getGameRules();
         if (!gameRules.getBoolean(NoTNTGriefing.END_CRYSTAL_GRIEFING)) {
-            return Explosion.DestructionType.NONE;
+            return World.ExplosionSourceType.NONE;
         }
-        return Explosion.DestructionType.BREAK;
+        return World.ExplosionSourceType.BLOCK;
     }
 
 }
