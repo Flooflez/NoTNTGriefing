@@ -18,9 +18,9 @@ public class BedBlockMixin {
     @Redirect(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/world/explosion/ExplosionBehavior;Lnet/minecraft/util/math/Vec3d;FZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"))
     private Explosion injected(World world, Entity entity, DamageSource damageSource, ExplosionBehavior behavior, Vec3d vec3d, float power, boolean createFire, World.ExplosionSourceType explosionSourceType) {
         if(!world.getGameRules().getBoolean(NoTNTGriefing.BED_GRIEFING)){
-            return world.createExplosion(null, DamageSource.badRespawnPoint(vec3d), null, vec3d, 5.0F, false, World.ExplosionSourceType.NONE);
+            return world.createExplosion(null, world.getDamageSources().badRespawnPoint(vec3d), null, vec3d, 5.0F, false, World.ExplosionSourceType.NONE);
         }
-        return world.createExplosion(null, DamageSource.badRespawnPoint(vec3d), null, vec3d, 5.0F, true, World.ExplosionSourceType.BLOCK);
+        return world.createExplosion(null, world.getDamageSources().badRespawnPoint(vec3d), null, vec3d, 5.0F, true, World.ExplosionSourceType.BLOCK);
     }
 
 }
