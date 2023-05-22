@@ -2,7 +2,7 @@
 ![NoTNTGriefingBanner](https://github.com/Flooflez/NoTNTGriefing/blob/1.18/src/main/resources/assets/no.tnt.griefing/NoTNTGriefingBanner.png?raw=true)
 ## What is NTG?
 
-This simple fabric mod for Minecraft 1.18.2 implements new gamerules that allow you to customise which explosions will break blocks. This allows server owners to customise what kind of explosions are allowed on a server
+This simple fabric mod for Minecraft that implements new gamerules that allow you to customise which explosions will break blocks. This allows server owners to customise what kind of explosions are allowed on a server
 
 ### Available Gamerules
 | Gamerule                | Description                                                       |
@@ -14,8 +14,7 @@ This simple fabric mod for Minecraft 1.18.2 implements new gamerules that allow 
 
 ## Installation Instructions (Single Player Worlds)
 1. Go to the [FabricMC website](https://fabricmc.net/use/installer/) and download the latest installer
-2. Run the JAR, a window will pop up. Choose the correct version of Minecraft and loader (this mod currently requires
-   Minecraft v1.18.2 and loader v0.13.3), and click on "Install".
+2. Run the JAR, a window will pop up. Choose the correct version of Minecraft and loader, and click on "Install".
 3. A new game version and profile will be created in the launcher's menu, which you can now use to launch Fabric.
 4. Go to [Modrinth](https://modrinth.com/mod/fabric-api) or [Curseforge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) and download Fabric API.
 5. Place the Fabric API Jar and the No TNT Griefing Jar into your "mods" folder
