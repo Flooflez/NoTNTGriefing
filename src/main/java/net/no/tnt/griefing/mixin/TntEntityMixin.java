@@ -19,7 +19,7 @@ public abstract class TntEntityMixin extends Entity {
 
 	@ModifyArg(method = "explode", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"), index = 5)
 	private World.ExplosionSourceType modifyExplosionSourceType(World.ExplosionSourceType destructionType) {
-		GameRules gameRules = this.getWorld().getGameRules();
+		GameRules gameRules = this.world.getGameRules();
 		if (!gameRules.getBoolean(NoTNTGriefing.TNT_GRIEFING)) {
 			return World.ExplosionSourceType.NONE;
 		}
