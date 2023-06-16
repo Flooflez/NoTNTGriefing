@@ -19,7 +19,7 @@ public abstract class TntMinecartEntityMixin extends Entity {
 
     @ModifyArg(method = "explode(Lnet/minecraft/entity/damage/DamageSource;D)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/world/explosion/ExplosionBehavior;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"), index = 8)
     private World.ExplosionSourceType modifyExplosionSourceType(World.ExplosionSourceType destructionType) {
-        GameRules gameRules = this.world.getGameRules();
+        GameRules gameRules = this.getWorld().getGameRules();
         if (!gameRules.getBoolean(NoTNTGriefing.TNT_GRIEFING)) {
             return World.ExplosionSourceType.NONE;
         }
